@@ -82,6 +82,23 @@ h1 {
     transform: translateY(-2px);
 }
 
+/* About Page */
+.about-content {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.about-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #2C2C2C;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
