@@ -1050,7 +1050,7 @@
                     </div>
                 </div>
 
-                <div class="option-card" onclick="goToScreen('screen-feedback2c')">
+                <div class="option-card" onclick="goToScreen('screen-feedback2-quick-perf')">
                     <div class="option-header">
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Quick AI prompt"</span>
@@ -1067,6 +1067,424 @@
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1')">
                     ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback - Quick AI WITH Performance Goal (Hasty AI Path) -->
+    <div class="screen" id="screen-feedback2-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You typed a quick prompt: <strong>"Create a roleplay about describing neighborhoods"</strong>
+                </p>
+
+                <p style="margin: 1rem 0;">The AI generates a roleplay...</p>
+
+                <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid var(--border);">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">AI Output:</p>
+                    <p style="font-style: italic; color: var(--text-secondary);">
+                        "Student A: Could you elaborate on the demographic composition of your residential area?<br>
+                        Student B: The neighbourhood predominantly comprises young professionals and families with diverse socioeconomic backgrounds.<br>
+                        Student A: How would you characterize the amenities and infrastructure?<br>
+                        Student B: We have comprehensive public transportation networks and numerous recreational facilities..."
+                    </p>
+                </div>
+
+                <div style="background: #FEF3C7; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--warning);">⚠️ Problems you might not notice:</p>
+                    <ul style="margin: 0.5rem 0 0 1.25rem; color: var(--text-secondary);">
+                        <li><strong>Level mismatch:</strong> This is B2/C1 level—your students are A2/B1!</li>
+                        <li>Vocabulary too formal ("demographic composition", "predominantly")</li>
+                        <li>Doesn't match your goal (helping a new resident)</li>
+                        <li>You didn't specify level in your prompt</li>
+                    </ul>
+                </div>
+
+                <p style="margin: 1rem 0; font-style: italic; color: var(--text-secondary);">
+                    "It's about neighborhoods... should be fine, right?"
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 12 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision2')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision3-quick-perf')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Decision 3 - Performance Goal + Quick AI Path -->
+    <div class="screen" id="screen-decision3-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+        <button class="help-btn" onclick="toggleTooltip()">?</button>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <h2 class="decision-title">DECISION 3: Before using this activity, do you...</h2>
+            <p class="decision-context">You have your AI-generated roleplay.<br>What's your next move?</p>
+
+            <div class="options">
+                <div class="option-card" onclick="goToScreen('screen-feedback3-quick-perf')">
+                    <div class="option-header">
+                        <span class="option-icon">📋</span>
+                        <span class="option-title">"Check if this matches my goal"</span>
+                    </div>
+                    <div class="option-meta">Verify alignment | 5 minutes</div>
+                    <div class="option-example">
+                        Compare the roleplay to your performance goal
+                    </div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback3b-quick-perf')">
+                    <div class="option-header">
+                        <span class="option-icon">⚡</span>
+                        <span class="option-title">"Trust it and move on—it looks good"</span>
+                    </div>
+                    <div class="option-meta">No verification | 0 minutes</div>
+                </div>
+            </div>
+
+            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-quick-perf')">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback 3 - Alignment Check (Performance Goal + Quick AI) -->
+    <div class="screen" id="screen-feedback3-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>7 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You checked alignment using the Quality Checklist...
+                </p>
+
+                <div style="background: #FEF3C7; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #F59E0B;">
+                    <h3 style="color: #B45309; margin-bottom: 1rem;">⚠️ MISMATCH DETECTED!</h3>
+
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-weight: 600;">Your Goal:</p>
+                        <p style="color: var(--green);">"Students will describe their neighborhood to help a new resident"</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">✓ Performance-based, clear context</p>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-weight: 600;">Your Activity:</p>
+                        <p style="color: #DC2626;">AI quick prompt → B2/C1 level output</p>
+                    </div>
+
+                    <div style="background: white; padding: 1rem; border-radius: 4px;">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Problems found:</p>
+                        <ul style="margin-left: 1.25rem; color: var(--text-secondary);">
+                            <li>❌ Level too high (B2/C1 vs A2/B1 students)</li>
+                            <li>❌ Formal vocabulary students don't know</li>
+                            <li>⚠️ Context is vague (not "helping new resident")</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #F0FFF4; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--green);">
+                    <p style="font-weight: 600; color: var(--green);">✓ GOOD NEWS: You caught the problem!</p>
+                    <p style="margin-top: 0.5rem;">The checklist revealed the mismatch. Your GOAL was excellent—your TOOL (quick prompt) was the issue.</p>
+                </div>
+
+                <p style="margin: 1rem 0; color: var(--text-secondary);">
+                    You could go back and use the detailed template, but you've already spent time...
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes checking</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 7 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3-quick-perf')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4-quick-perf')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback 3b - Skip Check (Performance Goal + Quick AI) -->
+    <div class="screen" id="screen-feedback3b-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <div class="feedback-box">
+                <p class="feedback-header">
+                    You decided to trust the AI output without checking...
+                </p>
+
+                <p style="margin: 1rem 0;">
+                    The roleplay is about neighborhoods. That matches your topic, so it should work... right?
+                </p>
+
+                <div style="background: #FEF3C7; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--warning);">⚠️ What you missed:</p>
+                    <ul style="margin: 0.5rem 0 0 1.25rem; color: var(--text-secondary);">
+                        <li>The AI output is B2/C1 level—much too hard for your A2/B1 students</li>
+                        <li>The vocabulary is formal and academic</li>
+                        <li>The context doesn't match "helping a new resident"</li>
+                    </ul>
+                </div>
+
+                <p style="margin: 1rem 0; font-style: italic; color: var(--text-secondary);">
+                    You'll discover these problems during the lesson...
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time saved:</strong> 5 minutes (no checking)</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 12 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3-quick-perf')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4-quick-perf')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Decision 4 - Modeling (Performance Goal + Quick AI Path) -->
+    <div class="screen" id="screen-decision4-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span id="timer-d4-quick">7 minutes remaining</span>
+        </div>
+        <button class="help-btn" onclick="toggleTooltip()">?</button>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <h2 class="decision-title">DECISION 4: Before students practice, do you...</h2>
+            <p class="decision-context">You're about to launch the roleplay activity.<br>How will you set students up for success?</p>
+
+            <div class="options">
+                <div class="option-card" onclick="goToScreen('screen-feedback4-quick-perf')">
+                    <div class="option-header">
+                        <span class="option-icon">👥</span>
+                        <span class="option-title">"Model the dialogue with a student first"</span>
+                    </div>
+                    <div class="option-meta">Demonstration | 5 minutes</div>
+                    <div class="option-example">
+                        Show students what success looks like before they try
+                    </div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback4a-quick-perf')">
+                    <div class="option-header">
+                        <span class="option-icon">📝</span>
+                        <span class="option-title">"Just give instructions and let them try"</span>
+                    </div>
+                    <div class="option-meta">Explain only | 2 minutes</div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="history.back()">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback 4 - Modeled (Performance Goal + Quick AI) -->
+    <div class="screen" id="screen-feedback4-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>2 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+            </div>
+
+            <div class="feedback-box">
+                <p class="feedback-header">
+                    You modeled the dialogue with a student...
+                </p>
+
+                <p style="margin: 1rem 0;">
+                    As you demonstrated, you noticed something:
+                </p>
+
+                <div style="background: #FEF3C7; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--warning);">⚠️ Uh oh...</p>
+                    <p style="margin-top: 0.5rem;">Even your strongest student struggled with vocabulary like "demographic composition" and "socioeconomic backgrounds."</p>
+                    <p style="margin-top: 0.5rem;">The language is clearly too difficult.</p>
+                </div>
+
+                <div style="background: #F0FFF4; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--green);">
+                    <p style="font-weight: 600; color: var(--green);">✓ Modeling helped you realize the problem early</p>
+                    <p style="margin-top: 0.5rem;">You can now simplify the vocabulary before the full class practice.</p>
+                </div>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes modeling</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 2 minutes (cutting it close!)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4-quick-perf')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome-hasty-ai')">
+                    SEE LESSON RESULTS →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback 4a - No Model (Performance Goal + Quick AI) -->
+    <div class="screen" id="screen-feedback4a-quick-perf">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>10 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+            </div>
+
+            <div class="feedback-box">
+                <p class="feedback-header">
+                    You gave instructions and launched into practice...
+                </p>
+
+                <p style="margin: 1rem 0;">
+                    "OK everyone, work with your partner and do the roleplay!"
+                </p>
+
+                <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: #DC2626;">❌ Students look confused immediately</p>
+                    <p style="margin-top: 0.5rem;">They're staring at words they don't know.</p>
+                    <p style="margin-top: 0.5rem;">"Teacher, what does 'demographic composition' mean?"</p>
+                </div>
+
+                <p style="margin: 1rem 0; font-style: italic; color: var(--text-secondary);">
+                    The vocabulary is too difficult, and without modeling, students have no idea what success looks like.
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time saved:</strong> 3 minutes (no modeling)</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 10 minutes (but the lesson is falling apart)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4-quick-perf')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome-hasty-ai-no-model')">
+                    SEE LESSON RESULTS →
                 </button>
             </div>
         </div>
@@ -3156,6 +3574,278 @@
         </div>
     </div>
 
+    <!-- SCREEN: Outcome - Hasty AI (Good Goal + Bad Tool + Modeled) -->
+    <div class="screen" id="screen-outcome-hasty-ai">
+        <div class="container">
+            <div class="outcome-header">
+                <h1 class="outcome-title">LESSON RESULTS</h1>
+                <p class="outcome-subtitle" style="color: var(--warning);">Good Intentions, Hasty Execution</p>
+            </div>
+
+            <div class="decisions-summary" style="border-left: 4px solid var(--warning);">
+                <h3>Your Decisions:</h3>
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Performance-based goal set (3 min)</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: var(--warning); font-weight: bold;">⚠️</span>
+                        <span>Quick AI prompt (5 min) - produced B2/C1 text!</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Checked alignment - caught the problem! (5 min)</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Modeled with student first (5 min)</span>
+                    </div>
+                </div>
+
+                <div class="planning-time" style="background: linear-gradient(135deg, #FEF3C7, #FDE68A);">
+                    <div><strong>PLANNING TIME:</strong> 18 minutes</div>
+                    <div style="margin-top: 0.75rem; font-size: 1.1rem;"><strong>TOTAL TIME INVESTMENT: 18 minutes</strong></div>
+                </div>
+            </div>
+
+            <div class="metrics-section" style="border: 2px solid var(--warning);">
+                <div class="metrics-title">
+                    <span>📊</span>
+                    <span>LESSON METRICS (90-minute lesson)</span>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>Student Speaking Time</span>
+                        <span class="metric-value" style="color: var(--warning);">12 minutes (13%)</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 13%; background: linear-gradient(90deg, var(--warning), #FBBF24);"></div>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>Participation Rate</span>
+                        <span class="metric-value" style="color: var(--warning);">6/12 students (50%)</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 50%; background: linear-gradient(90deg, var(--warning), #FBBF24);"></div>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>Student Confidence</span>
+                        <span class="metric-value" style="color: var(--warning);">Low (struggling)</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 30%; background: linear-gradient(90deg, var(--warning), #FBBF24);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thoughts-section" style="background: #FEF3C7;">
+                <div class="thoughts-title">
+                    <span>💭</span>
+                    <span>WHAT STUDENTS ARE THINKING</span>
+                </div>
+                <div class="thought-bubbles">
+                    <div class="thought" style="background: white;"><span>😰</span> "These words are too difficult"</div>
+                    <div class="thought" style="background: white;"><span>😕</span> "I saw the teacher do it, but I can't do it myself"</div>
+                    <div class="thought" style="background: white;"><span>😟</span> "I feel stuck"</div>
+                    <div class="thought" style="background: white;"><span>😐</span> "Can we do something easier?"</div>
+                </div>
+            </div>
+
+            <div class="what-happened" style="border-left: 4px solid var(--warning);">
+                <h3 style="color: var(--warning);"><span>⚠️</span> WHAT HAPPENED</h3>
+                <p><strong>Your GOAL was excellent:</strong> clear, performance-based, authentic context.</p>
+                <p><strong>BUT the AI generated text at B2/C1 level</strong> (your students are A2/B1).</p>
+                <p>The alignment check <strong>CAUGHT</strong> this problem, and you tried to help by modeling first.</p>
+
+                <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>During modeling:</strong> Even your strongest student struggled with vocabulary like "demographic composition" and "socioeconomic backgrounds."</p>
+                    <p style="margin-top: 0.5rem;"><strong>You simplified on the spot,</strong> but students still found the language challenging.</p>
+                </div>
+
+                <p>Modeling can't fully fix a fundamental level mismatch. Students saw what to do but couldn't execute because the language was too difficult.</p>
+                <p><strong>Only 6 students attempted speaking;</strong> others felt overwhelmed.</p>
+            </div>
+
+            <div class="insight-card" style="margin-bottom: 2rem; border: 2px solid var(--warning);">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <span class="insight-title">KEY INSIGHT</span>
+                </div>
+                <div class="insight-content">
+                    <p><strong>Good goal + Bad tool = Poor results</strong></p>
+                    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>AI is only as good as your prompt. "Create a roleplay about neighborhoods" is too vague.</p>
+                    </div>
+                    <p><strong>You did TWO things right:</strong></p>
+                    <ul style="margin-left: 1.25rem;">
+                        <li>✓ Set a clear performance goal</li>
+                        <li>✓ Checked alignment (caught the mismatch!)</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem;"><strong>You did ONE thing wrong:</strong></p>
+                    <ul style="margin-left: 1.25rem;">
+                        <li>✗ Used a vague AI prompt</li>
+                    </ul>
+                    <div class="insight-highlight" style="background: #FEF3C7; border-left: 4px solid var(--warning);">
+                        With the detailed template, this would have been an excellent lesson.<br>
+                        <strong>Same good goal + Better tool = 50 min speaking vs 12 min</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Outcome - Hasty AI No Model (Good Goal + Bad Tool + No Model) -->
+    <div class="screen" id="screen-outcome-hasty-ai-no-model">
+        <div class="container">
+            <div class="outcome-header">
+                <h1 class="outcome-title">LESSON RESULTS</h1>
+                <p class="outcome-subtitle" style="color: var(--coral);">Good Goal, Bad Tool, No Safety Net</p>
+            </div>
+
+            <div class="decisions-summary" style="border-left: 4px solid var(--coral);">
+                <h3>Your Decisions:</h3>
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Performance-based goal set (3 min)</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: var(--coral); font-weight: bold;">✗</span>
+                        <span>Quick AI prompt (5 min) - produced B2/C1 text!</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: var(--text-secondary);">—</span>
+                        <span style="color: var(--text-secondary);">Skipped alignment check</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: var(--coral); font-weight: bold;">✗</span>
+                        <span>No modeling - just launched into practice</span>
+                    </div>
+                </div>
+
+                <div class="planning-time" style="background: linear-gradient(135deg, #FEE2E2, #FECACA);">
+                    <div><strong>PLANNING TIME:</strong> 8 minutes</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">(Quick planning, rough lesson)</div>
+                    <div style="margin-top: 0.75rem; font-size: 1.1rem; color: var(--coral);"><strong>TOTAL TIME INVESTMENT: 8 minutes</strong></div>
+                </div>
+            </div>
+
+            <div class="metrics-section" style="border: 2px solid var(--coral);">
+                <div class="metrics-title">
+                    <span>📊</span>
+                    <span>LESSON METRICS (90-minute lesson)</span>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>Student Speaking Time</span>
+                        <span class="metric-value" style="color: var(--coral);">5 minutes (6%)</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 6%; background: linear-gradient(90deg, var(--coral), #F87171);"></div>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>Participation Rate</span>
+                        <span class="metric-value" style="color: var(--coral);">3/12 students (25%)</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 25%; background: linear-gradient(90deg, var(--coral), #F87171);"></div>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>Student Confidence</span>
+                        <span class="metric-value" style="color: var(--coral);">Very Low (lost)</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 15%; background: linear-gradient(90deg, var(--coral), #F87171);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thoughts-section" style="background: #FEE2E2;">
+                <div class="thoughts-title">
+                    <span>💭</span>
+                    <span>WHAT STUDENTS ARE THINKING</span>
+                </div>
+                <div class="thought-bubbles">
+                    <div class="thought" style="background: white;"><span>😰</span> "I don't understand these words"</div>
+                    <div class="thought" style="background: white;"><span>😕</span> "What am I supposed to do?"</div>
+                    <div class="thought" style="background: white;"><span>😟</span> "This is too hard for me"</div>
+                    <div class="thought" style="background: white;"><span>😞</span> "I give up"</div>
+                </div>
+            </div>
+
+            <div class="what-happened" style="border-left: 4px solid var(--coral); background: #FEF2F2;">
+                <h3 style="color: var(--coral);"><span>💥</span> WHAT HAPPENED</h3>
+                <p><strong>Your goal was great,</strong> but everything after that went wrong.</p>
+
+                <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>"OK everyone, work with your partner!"</strong></p>
+                    <p style="margin-top: 0.5rem;">Students stared at words they didn't know.</p>
+                    <p style="margin-top: 0.5rem;"><em>"Teacher, what does 'demographic composition' mean?"</em></p>
+                    <p style="margin-top: 0.5rem;"><em>"What is 'socioeconomic backgrounds'?"</em></p>
+                </div>
+
+                <p>Without modeling, students had no idea what success looks like.</p>
+                <p>Without checking alignment, you didn't know the text was too hard until it was too late.</p>
+                <p><strong>The activity collapsed within 3 minutes.</strong></p>
+            </div>
+
+            <div class="insight-card" style="margin-bottom: 2rem; border: 2px solid var(--coral);">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <span class="insight-title">KEY INSIGHT</span>
+                </div>
+                <div class="insight-content">
+                    <p><strong>A good goal can't save a bad tool + no safety nets</strong></p>
+                    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>Your goal was excellent, but:</p>
+                        <ul style="margin-left: 1.25rem;">
+                            <li>The quick prompt produced wrong-level text</li>
+                            <li>Skipping the check meant you didn't catch it</li>
+                            <li>No modeling meant students had no reference point</li>
+                        </ul>
+                    </div>
+                    <div class="insight-highlight" style="background: #FEE2E2; border-left: 4px solid var(--coral);">
+                        Two shortcuts (bad prompt + no model) compounded into disaster.<br>
+                        <strong>Even one safety net (checking OR modeling) would have helped.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- SCREEN 12: Key Insights -->
     <div class="screen" id="screen-insights">
         <div class="container insights-container">
@@ -3400,6 +4090,31 @@
                 case 'screen-feedback3b-recovered':
                     state.PLANNING_TIME_REMAINING = 14;
                     state.CHECKED_ALIGNMENT = false;
+                    break;
+                // Hasty AI path (performance goal + quick AI)
+                case 'screen-feedback2-quick-perf':
+                    state.PLANNING_TIME_REMAINING = 12;
+                    state.ACTIVITY_SOURCE = 'quick_ai';
+                    break;
+                case 'screen-feedback3-quick-perf':
+                    state.PLANNING_TIME_REMAINING = 7;
+                    state.CHECKED_ALIGNMENT = true;
+                    break;
+                case 'screen-feedback3b-quick-perf':
+                    state.PLANNING_TIME_REMAINING = 12;
+                    state.CHECKED_ALIGNMENT = false;
+                    break;
+                case 'screen-feedback4-quick-perf':
+                    state.MODELED = true;
+                    break;
+                case 'screen-feedback4a-quick-perf':
+                    state.MODELED = false;
+                    break;
+                case 'screen-outcome-hasty-ai':
+                    state.OUTCOME_VIEWED = 'hasty_ai';
+                    break;
+                case 'screen-outcome-hasty-ai-no-model':
+                    state.OUTCOME_VIEWED = 'hasty_ai_no_model';
                     break;
             }
         }
