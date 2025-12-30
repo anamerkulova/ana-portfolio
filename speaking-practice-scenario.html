@@ -946,9 +946,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-decision2')" style="width: 100%;">
-                CONTINUE TO NEXT DECISION →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision1')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision2')">
+                    CONTINUE →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -997,9 +1002,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-decision2c')" style="width: 100%;">
-                CONTINUE TO NEXT DECISION →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision1')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision2c')">
+                    CONTINUE →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1078,21 +1088,13 @@
             <p class="decision-context">You need a speaking activity about neighborhoods. No specific goal in mind.<br>What's your approach?</p>
 
             <div class="options">
-                <div class="option-card" onclick="goToScreen('screen-feedback2')">
-                    <div class="option-header">
-                        <span class="option-icon">📚</span>
-                        <span class="option-title">"Use textbook activity"</span>
-                    </div>
-                    <div class="option-meta">Quick but generic | 2 minutes</div>
-                </div>
-
-                <div class="option-card" onclick="goToScreen('screen-feedback2')">
+                <div class="option-card disabled" onclick="showComingSoon()">
                     <div class="option-header">
                         <span class="option-icon">🤖</span>
                         <span class="option-title">"Write detailed AI prompt with context"</span>
                     </div>
                     <div class="option-meta">Custom, aligned | 8 minutes</div>
-                    <div class="option-example">
+                    <div class="option-example" style="color: var(--warning);">
                         But wait... aligned to WHAT? You skipped the goal.
                     </div>
                 </div>
@@ -1172,9 +1174,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-decision3')" style="width: 100%;">
-                CONTINUE TO NEXT DECISION →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision2')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision3')">
+                    CONTINUE →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1236,9 +1243,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-decision3c')" style="width: 100%;">
-                CONTINUE TO NEXT DECISION →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision2c')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision3c')">
+                    CONTINUE →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1388,9 +1400,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-decision4')" style="width: 100%;">
-                CONTINUE TO NEXT DECISION →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4')">
+                    CONTINUE →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1450,9 +1467,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-outcome7')" style="width: 100%;">
-                SEE WHAT HAPPENS TOMORROW →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3c')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome7')">
+                    SEE WHAT HAPPENS TOMORROW →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1548,9 +1570,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-outcome2')" style="width: 100%;">
-                SEE LESSON RESULTS →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome2')">
+                    SEE LESSON RESULTS →
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1615,9 +1642,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-outcome')" style="width: 100%;">
-                SEE LESSON RESULTS →
-            </button>
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome')">
+                    SEE LESSON RESULTS →
+                </button>
+            </div>
         </div>
     </div>
 
