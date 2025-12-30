@@ -1100,14 +1100,14 @@
             <p class="decision-context">You need a speaking activity about neighborhoods. No specific goal in mind.<br>What's your approach?</p>
 
             <div class="options">
-                <div class="option-card disabled" onclick="showComingSoon()">
+                <div class="option-card" onclick="goToScreen('screen-feedback2-recovery')">
                     <div class="option-header">
                         <span class="option-icon">🤖</span>
                         <span class="option-title">"Write detailed AI prompt with context"</span>
                     </div>
-                    <div class="option-meta">Custom, aligned | 8 minutes</div>
-                    <div class="option-example" style="color: var(--warning);">
-                        But wait... aligned to WHAT? You skipped the goal.
+                    <div class="option-meta">Custom, uses template | 8 minutes</div>
+                    <div class="option-example">
+                        Use the AI Prompt Template to write a comprehensive prompt
                     </div>
                 </div>
 
@@ -1128,6 +1128,288 @@
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1c')">
                     ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 6-RECOVERY: Feedback - Detailed Prompt WITHOUT Goal (Recovery Path) -->
+    <div class="screen" id="screen-feedback2-recovery">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>11 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You opened the AI Prompt Template to write a detailed prompt...
+                </p>
+
+                <div style="background: #FEF3C7; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #F59E0B;">
+                    <h3 style="color: #B45309; margin-bottom: 1rem;">⚠️ WAIT — To write this prompt, you need to define:</h3>
+                    <ul style="margin-left: 1.5rem; color: #92400E;">
+                        <li>What specific context/situation?</li>
+                        <li>What will students actually DO?</li>
+                        <li>Who are they speaking to?</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-weight: 600; color: #92400E;">
+                        The template FORCED you to clarify what you actually want students to practice!
+                    </p>
+                </div>
+
+                <p style="margin: 1rem 0;">You ended up defining this while filling out the template:</p>
+
+                <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>Context:</strong> Two neighbors meeting in a café</p>
+                    <p><strong>Task:</strong> Describe neighborhood to help new resident</p>
+                    <p><strong>Student Level:</strong> A2/B1 (pre-intermediate)</p>
+                </div>
+
+                <p style="margin: 1rem 0;">Here's what the AI generated:</p>
+
+                <div class="dialogue-box">
+                    <div class="dialogue-line">
+                        <span class="dialogue-speaker">Person A:</span> "So, you just moved here! How are you settling in?"
+                    </div>
+                    <div class="dialogue-line">
+                        <span class="dialogue-speaker">Person B:</span> "Pretty well, thanks! I'm still learning my way around the neighborhood."
+                    </div>
+                    <div class="dialogue-line">
+                        <span class="dialogue-speaker">Person A:</span> "Oh, I can help! What would you like to know?"
+                    </div>
+                    <div class="dialogue-line">
+                        <span class="dialogue-speaker">Person B:</span> "Well, is there a park nearby? I love walking my dog."
+                    </div>
+                    <div class="dialogue-line">
+                        <span class="dialogue-speaker">Person A:</span> "Yes! There's a beautiful park just five minutes away..."
+                    </div>
+                </div>
+
+                <div class="checkmark-list" style="margin: 1.5rem 0;">
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Appropriate level (A2/B1)</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Natural, authentic language</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>6-8 exchanges (substantial speaking time)</span>
+                    </div>
+                </div>
+
+                <div style="background: #FFF7ED; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #F59E0B;">
+                    <p style="font-weight: 600; color: #C2410C;">🔄 PARTIAL RECOVERY:</p>
+                    <p style="margin-top: 0.5rem;">You created a quality activity, BUT you did it backwards.</p>
+                    <p style="margin-top: 0.5rem;">Defining your goal FIRST would have saved time and guided your choices more efficiently.</p>
+                </div>
+
+                <div class="time-summary" style="background: #FEF3C7;">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 8 minutes (including thinking through context)</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 11 minutes</span>
+                    </div>
+                    <div class="time-item" style="color: #B45309;">
+                        <span>💡</span>
+                        <span>The template helped you recover, but you spent extra mental energy figuring it out</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision2c')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision3-recovered')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Decision 3 for Recovered Path (after using detailed template without goal) -->
+    <div class="screen" id="screen-decision3-recovered">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>11 minutes remaining</span>
+        </div>
+        <button class="help-btn" onclick="toggleTooltip()">?</button>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <h2 class="decision-title">DECISION 3: Before using this activity, do you...</h2>
+            <p class="decision-context">You've got a quality roleplay from the AI.<br>What's your next move?</p>
+
+            <div style="background: #F0FFF4; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--green);">
+                <p style="font-size: 0.9rem; color: var(--green);">
+                    ✓ The template helped you clarify your goal. Your activity is now aligned!
+                </p>
+            </div>
+
+            <div class="options">
+                <div class="option-card" onclick="goToScreen('screen-feedback3-recovered')">
+                    <div class="option-header">
+                        <span class="option-icon">📋</span>
+                        <span class="option-title">"Quick check with the checklist"</span>
+                    </div>
+                    <div class="option-meta">Verify alignment | 5 minutes</div>
+                    <div class="option-example">
+                        Confirm the roleplay matches your (now-defined) goal
+                    </div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback3b-recovered')">
+                    <div class="option-header">
+                        <span class="option-icon">⚡</span>
+                        <span class="option-title">"Trust it and move on—it looks good"</span>
+                    </div>
+                    <div class="option-meta">No verification | 0 minutes</div>
+                </div>
+            </div>
+
+            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-recovery')">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback 3 - Checked Alignment (Recovered Path) -->
+    <div class="screen" id="screen-feedback3-recovered">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>6 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--green);">
+                <p class="feedback-header">
+                    You used the Quality Checklist to verify your roleplay:
+                </p>
+
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Vocabulary matches A2/B1 level</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Scenario feels authentic</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Both partners will speak equally</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Aligns with your (template-defined) goal</span>
+                    </div>
+                </div>
+
+                <div style="background: #F0FFF4; padding: 1rem; border-radius: 8px; margin: 1rem 0; border: 1px solid var(--green);">
+                    <p style="color: var(--green); font-weight: 600;">✓ GOOD ALIGNMENT!</p>
+                    <p style="margin-top: 0.5rem;">Your roleplay supports your lesson goal effectively.</p>
+                </div>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 6 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3-recovered')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4-recovered')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN: Feedback 3b - Skipped Check (Recovered Path) -->
+    <div class="screen" id="screen-feedback3b-recovered">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>11 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You decide to skip the checklist and trust the AI output.
+                </p>
+
+                <p style="margin: 1rem 0; color: var(--text-secondary);">
+                    You save 5 minutes by skipping the quality check.
+                </p>
+
+                <p style="margin: 1rem 0;">
+                    The roleplay looks good—the template helped you create something solid.
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 0 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 11 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3-recovered')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4-recovered')">
+                    CONTINUE →
                 </button>
             </div>
         </div>
@@ -3111,6 +3393,21 @@
                     break;
                 case 'screen-outcome8-no-model':
                     state.OUTCOME_VIEWED = 'recovered_no_model';
+                    break;
+                // AI detailed prompt recovery path (template forced clarity)
+                case 'screen-feedback2-recovery':
+                    state.PLANNING_TIME_REMAINING = 9;
+                    state.ACTIVITY_SOURCE = 'detailed_ai';
+                    state.APPROACH = 'recovered';
+                    state.RECOVERY_METHOD = 'template_forced_clarity';
+                    break;
+                case 'screen-feedback3-recovered':
+                    state.PLANNING_TIME_REMAINING = 4;
+                    state.CHECKED_ALIGNMENT = true;
+                    break;
+                case 'screen-feedback3b-recovered':
+                    state.PLANNING_TIME_REMAINING = 14;
+                    state.CHECKED_ALIGNMENT = false;
                     break;
             }
         }
