@@ -290,9 +290,9 @@
         }
 
         .option-card:hover {
-            border-color: var(--coral);
+            border-color: #3B82F6;
             transform: translateX(4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
         }
 
         .option-card.disabled {
@@ -896,6 +896,12 @@
             </div>
 
             <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help choosing? View Performance Goal Guide</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-intro')">
+                    ← Back
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1065,6 +1071,12 @@
             </div>
 
             <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View AI Prompt Template</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1')">
+                    ← Back
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1112,6 +1124,12 @@
             </div>
 
             <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View AI Prompt Template</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1c')">
+                    ← Back
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1295,6 +1313,12 @@
             </div>
 
             <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2')">
+                    ← Back
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1342,6 +1366,12 @@
             </div>
 
             <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2c')">
+                    ← Back
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1975,11 +2005,11 @@
             </div>
 
             <div class="final-buttons">
-                <button class="btn btn-secondary" onclick="restartSimulation()">
+                <button class="btn btn-primary" onclick="restartSimulation()">
                     ↺ Try Another Path
                 </button>
-                <button class="btn btn-primary" onclick="goToScreen('screen-insights')">
-                    Continue to Key Insights →
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
                 </button>
             </div>
         </div>
@@ -2094,11 +2124,11 @@
             </div>
 
             <div class="final-buttons">
-                <button class="btn btn-secondary" onclick="restartSimulation()">
+                <button class="btn btn-primary" onclick="restartSimulation()">
                     ↺ Try Another Path
                 </button>
-                <button class="btn btn-primary" onclick="goToScreen('screen-insights')">
-                    Continue to Key Insights →
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
                 </button>
             </div>
         </div>
@@ -2149,6 +2179,12 @@
                     </div>
                     <div class="option-meta">Clear written steps | 2 minutes</div>
                 </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback3')">
+                    ← Back
+                </button>
             </div>
         </div>
     </div>
@@ -2427,9 +2463,14 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-large" onclick="goToScreen('screen-insights')" style="width: 100%;">
-                CONTINUE TO KEY INSIGHTS →
-            </button>
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
         </div>
     </div>
 
@@ -2631,11 +2672,11 @@
             </div>
 
             <div class="final-buttons">
-                <button class="btn btn-secondary" onclick="goToScreen('screen-decision1')">
-                    ↩ TRY ANOTHER PATH
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
                 </button>
-                <button class="btn btn-primary" onclick="goToScreen('screen-insights')">
-                    CONTINUE TO KEY INSIGHTS →
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
                 </button>
             </div>
         </div>
@@ -2831,11 +2872,11 @@
             </div>
 
             <div class="final-buttons">
-                <button class="btn btn-secondary" onclick="goToScreen('screen-decision1')">
-                    ↩ TRY THE OPTIMAL PATH
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
                 </button>
-                <button class="btn btn-primary" onclick="goToScreen('screen-insights')">
-                    CONTINUE TO KEY INSIGHTS →
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
                 </button>
             </div>
         </div>
