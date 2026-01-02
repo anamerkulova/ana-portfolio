@@ -1954,10 +1954,18 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Quick AI prompt"</span>
                     </div>
-                    <div class="option-meta">Fast, matches your current approach | 5 minutes</div>
+                    <div class="option-meta">Fast, matches your current approach | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
                     <div class="option-example">
                         "Create a roleplay about describing neighborhoods"
                     </div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback2-textbook-no-goal')">
+                    <div class="option-header">
+                        <span class="option-icon">📚</span>
+                        <span class="option-title">"Use textbook activity"</span>
+                    </div>
+                    <div class="option-meta">Quick but generic | <span style="font-weight: 500;">Preparation time: -2 minutes</span></div>
                 </div>
             </div>
 
@@ -1966,6 +1974,533 @@
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1c')">
                     ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Textbook Feedback for No-Goal Path -->
+    <div class="screen" id="screen-feedback2-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>17 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You chose the textbook activity without a specific goal...
+                </p>
+
+                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #bae6fd;">
+                    <h4 style="color: #0369a1; margin-bottom: 0.75rem;">📚 Your textbook says:</h4>
+                    <p style="font-style: italic; color: #0c4a6e;">"Practice 1: Work in pairs. Ask and answer questions about your neighborhood."</p>
+                    <ul style="margin: 1rem 0 0 1.5rem; color: #0c4a6e;">
+                        <li>Where do you live?</li>
+                        <li>What's your neighborhood like?</li>
+                        <li>What can you do there?</li>
+                    </ul>
+                </div>
+
+                <div style="background: #FEF3C7; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--warning);">⚠️ Without a goal, you're not sure:</p>
+                    <ul style="margin: 0.5rem 0 0 1.5rem; color: #92400E;">
+                        <li>What should students be able to DO by the end?</li>
+                        <li>Is this Q&A format what they need?</li>
+                        <li>How will you know if it worked?</li>
+                    </ul>
+                </div>
+
+                <p style="color: var(--text-secondary); font-style: italic;">
+                    "It's in the textbook, so it must be fine... right?"
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 2 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 17 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision2c')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision3-textbook-no-goal')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decision 3 for Textbook No-Goal Path -->
+    <div class="screen" id="screen-decision3-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>17 minutes remaining</span>
+        </div>
+        <button class="help-btn" onclick="toggleTooltip()">?</button>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+
+            <h2 class="decision-title">DECISION 3: Check activity alignment?</h2>
+            <p class="decision-context">You have the textbook activity. Do you want to check if it matches... well, something?</p>
+
+            <div class="options">
+                <div class="option-card" onclick="goToScreen('screen-feedback3-textbook-no-goal')">
+                    <div class="option-header">
+                        <span class="option-icon">✅</span>
+                        <span class="option-title">"Let me think about what I actually want"</span>
+                    </div>
+                    <div class="option-meta">Reflective, catches problems | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback3b-textbook-no-goal')">
+                    <div class="option-header">
+                        <span class="option-icon">⏭️</span>
+                        <span class="option-title">"Skip - it's from the textbook, it's fine"</span>
+                    </div>
+                    <div class="option-meta">Fast but risky | <span style="font-weight: 500;">Preparation time: -0 minutes</span></div>
+                </div>
+            </div>
+
+            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-textbook-no-goal')">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback 3 for Textbook No-Goal: Check Alignment (Recovery!) -->
+    <div class="screen" id="screen-feedback3-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You tried to check alignment and realized... you have no goal to align TO!
+                </p>
+
+                <div style="background: #FEF3C7; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #F59E0B;">
+                    <h3 style="color: #B45309; margin-bottom: 1rem;">⚠️ WAIT — The checklist asks:</h3>
+                    <p style="color: #92400E; font-style: italic;">"Does your activity require students to DO what your goal describes?"</p>
+                    <p style="color: #92400E; margin-top: 1rem;"><strong>But you don't have a goal!</strong></p>
+                </div>
+
+                <div style="background: #ECFDF5; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 2px solid #10B981;">
+                    <h3 style="color: #047857; margin-bottom: 1rem;">💡 RECOVERY MOMENT!</h3>
+                    <p style="color: #065F46;">The checklist just saved you from running an aimless activity.</p>
+                    <p style="color: #065F46; margin-top: 0.75rem;">You now define a goal: <strong>"Students will describe their neighborhood to help a new resident learn about the area."</strong></p>
+                    <p style="color: #065F46; margin-top: 0.75rem;">Looking at the textbook Q&A format... it doesn't quite match this goal. You adapt it into a more realistic roleplay scenario.</p>
+                </div>
+
+                <p style="margin: 1rem 0; font-weight: 500;">
+                    ✓ You now have a goal AND an adapted activity that matches it.
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes (defining goal + adapting)</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 12 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3-textbook-no-goal')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4-textbook-no-goal')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback 3B for Textbook No-Goal: Skip Check -->
+    <div class="screen" id="screen-feedback3b-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>17 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--coral);">
+                <p class="feedback-header">
+                    You skipped the alignment check. "The textbook knows best."
+                </p>
+
+                <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--coral);">❌ What you're missing:</p>
+                    <ul style="margin: 0.5rem 0 0 1.5rem; color: #991B1B;">
+                        <li>No goal = no way to measure success</li>
+                        <li>No adaptation = generic activity for your specific students</li>
+                        <li>No preparation = students won't know what "good" looks like</li>
+                    </ul>
+                </div>
+
+                <p style="color: var(--text-secondary); font-style: italic;">
+                    "It'll be fine. Students always enjoy speaking activities... don't they?"
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 0 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 17 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision3-textbook-no-goal')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-decision4-textbook-no-goal-skip')">
+                    CONTINUE →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decision 4 for Textbook No-Goal: After Recovery -->
+    <div class="screen" id="screen-decision4-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+        <button class="help-btn" onclick="toggleTooltip()">?</button>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <h2 class="decision-title">DECISION 4: Model before practice?</h2>
+            <p class="decision-context">You've recovered nicely with a goal and adapted activity. Will you model the dialogue?</p>
+
+            <div class="options">
+                <div class="option-card" onclick="goToScreen('screen-feedback4-textbook-no-goal')">
+                    <div class="option-header">
+                        <span class="option-icon">🎭</span>
+                        <span class="option-title">"Yes, show them what good looks like"</span>
+                    </div>
+                    <div class="option-meta">Maximum clarity, best results | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback4a-textbook-no-goal')">
+                    <div class="option-header">
+                        <span class="option-icon">⏭️</span>
+                        <span class="option-title">"No, just let them practice"</span>
+                    </div>
+                    <div class="option-meta">Saves time but risky | <span style="font-weight: 500;">Preparation time: -0 minutes</span></div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback3-textbook-no-goal')">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decision 4 for Textbook No-Goal Skip Path -->
+    <div class="screen" id="screen-decision4-textbook-no-goal-skip">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>17 minutes remaining</span>
+        </div>
+        <button class="help-btn" onclick="toggleTooltip()">?</button>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot active"></div>
+            </div>
+
+            <h2 class="decision-title">DECISION 4: Model before practice?</h2>
+            <p class="decision-context">You have the textbook activity. Will you demonstrate it first?</p>
+
+            <div class="options">
+                <div class="option-card" onclick="goToScreen('screen-feedback4-textbook-no-goal-skip')">
+                    <div class="option-header">
+                        <span class="option-icon">🎭</span>
+                        <span class="option-title">"Yes, model the dialogue"</span>
+                    </div>
+                    <div class="option-meta">Shows expectations | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
+                </div>
+
+                <div class="option-card" onclick="goToScreen('screen-feedback4a-textbook-no-goal-skip')">
+                    <div class="option-header">
+                        <span class="option-icon">⏭️</span>
+                        <span class="option-title">"No, just start the activity"</span>
+                    </div>
+                    <div class="option-meta">Fastest option | <span style="font-weight: 500;">Preparation time: -0 minutes</span></div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-feedback3b-textbook-no-goal')">
+                    ← Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback 4 for Textbook No-Goal Recovery: Modeled -->
+    <div class="screen" id="screen-feedback4-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>7 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--green);">
+                <p class="feedback-header">
+                    ✓ You modeled the adapted dialogue!
+                </p>
+
+                <div style="background: #ECFDF5; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="color: #047857; margin-bottom: 0.75rem;">🎭 Students saw:</h4>
+                    <p style="color: #065F46;">A realistic conversation between a local and new resident, with natural reactions and helpful descriptions of the neighborhood.</p>
+                    <p style="color: #065F46; margin-top: 0.75rem;"><strong>Now they know exactly what they're aiming for.</strong></p>
+                </div>
+
+                <p style="font-weight: 500; color: var(--green);">
+                    Late recovery + good modeling = solid outcome despite the rocky start!
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 7 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4-textbook-no-goal')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome-textbook-recovered')">
+                    SEE OUTCOME →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback 4A for Textbook No-Goal Recovery: No Model -->
+    <div class="screen" id="screen-feedback4a-textbook-no-goal">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You skipped modeling after your recovery...
+                </p>
+
+                <div style="background: #FEF3C7; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--warning);">⚠️ What happens:</p>
+                    <p style="color: #92400E; margin-top: 0.5rem;">You recovered nicely with a goal and adapted activity, but students still don't know what "good" looks like. Some will figure it out, others will struggle.</p>
+                </div>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 0 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 12 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4-textbook-no-goal')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome-textbook-recovered-no-model')">
+                    SEE OUTCOME →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback 4 for Textbook No-Goal Skip Path: Modeled -->
+    <div class="screen" id="screen-feedback4-textbook-no-goal-skip">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>12 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--warning);">
+                <p class="feedback-header">
+                    You modeled the textbook dialogue...
+                </p>
+
+                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="color: #0369a1; margin-bottom: 0.75rem;">🎭 Students saw:</h4>
+                    <p style="color: #0c4a6e; font-style: italic;">"Where do you live?" "I live in [area]." "What's it like?" "It's nice."</p>
+                    <p style="color: #0c4a6e; margin-top: 0.75rem;">The model shows the format, but without a goal, it's just... Q&A practice.</p>
+                </div>
+
+                <p style="color: var(--text-secondary);">
+                    Modeling helps, but you're modeling a generic activity without clear purpose.
+                </p>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 5 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 12 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4-textbook-no-goal-skip')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome-textbook-aimless-model')">
+                    SEE OUTCOME →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback 4A for Textbook No-Goal Skip Path: No Model -->
+    <div class="screen" id="screen-feedback4a-textbook-no-goal-skip">
+        <div class="timer">
+            <span class="timer-icon">⏱️</span>
+            <span>17 minutes remaining</span>
+        </div>
+
+        <div class="container">
+            <div class="progress">
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+                <div class="progress-dot completed"></div>
+            </div>
+
+            <div class="feedback-box" style="border-left: 4px solid var(--coral);">
+                <p class="feedback-header">
+                    Straight to practice with no preparation...
+                </p>
+
+                <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <p style="font-weight: 600; color: var(--coral);">❌ Your approach:</p>
+                    <ul style="margin: 0.5rem 0 0 1.5rem; color: #991B1B;">
+                        <li>No goal defined</li>
+                        <li>Generic textbook activity</li>
+                        <li>No alignment check</li>
+                        <li>No modeling</li>
+                    </ul>
+                    <p style="color: #991B1B; margin-top: 1rem; font-style: italic;">"Open your books to page 47. Work in pairs."</p>
+                </div>
+
+                <div class="time-summary">
+                    <div class="time-item">
+                        <span>⏱️</span>
+                        <span><strong>Time spent:</strong> 0 minutes</span>
+                    </div>
+                    <div class="time-item">
+                        <span>⏳</span>
+                        <span><strong>Time remaining:</strong> 17 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons" style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="goToScreen('screen-decision4-textbook-no-goal-skip')">
+                    ← Back
+                </button>
+                <button class="btn btn-primary" onclick="goToScreen('screen-outcome-textbook-aimless')">
+                    SEE OUTCOME →
                 </button>
             </div>
         </div>
@@ -4590,6 +5125,378 @@
         </div>
     </div>
 
+    <!-- OUTCOME: Textbook Recovered (No Goal → Textbook → Align Check Recovery → Model) -->
+    <div class="screen" id="screen-outcome-textbook-recovered">
+        <div class="container">
+            <div class="outcome-header">
+                <h1 class="outcome-title">LESSON RESULTS</h1>
+                <p class="outcome-subtitle" style="color: var(--green);">Late Recovery Success</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Total Class Time</div>
+                    <div class="metric-value">90 min</div>
+                </div>
+                <div class="metric-card highlight">
+                    <div class="metric-label">Student Speaking Time</div>
+                    <div class="metric-value">42 min</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 47%; background: var(--green);"></div>
+                    </div>
+                    <div class="metric-subtext">47% of class time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Planning Time Used</div>
+                    <div class="metric-value">13 min</div>
+                    <div class="metric-subtext">Goal + adaptation + modeling prep</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Student Participation</div>
+                    <div class="metric-value">83%</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 83%; background: var(--green);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="outcome-summary" style="background: #ECFDF5; border-left: 4px solid var(--green);">
+                <h3>What Happened:</h3>
+                <p>You started without a goal, grabbed the textbook activity, then caught yourself during the alignment check. "Wait—what am I even trying to achieve?"</p>
+                <p style="margin-top: 1rem;">That moment of reflection saved the lesson. You defined a clear goal, adapted the generic Q&A into a purposeful roleplay, and modeled it effectively.</p>
+                <p style="margin-top: 1rem;">Students understood exactly what "good" looked like and practiced with purpose.</p>
+                <p style="margin-top: 1rem;"><strong>The tools caught you before you ran an aimless activity.</strong></p>
+            </div>
+
+            <div class="student-thoughts">
+                <h3>Student Experience:</h3>
+                <div class="thought-bubbles">
+                    <div class="thought-bubble positive">
+                        <span class="thought-emoji">😊</span>
+                        <span class="thought-text">"Now I understand what we're practicing for!"</span>
+                    </div>
+                    <div class="thought-bubble positive">
+                        <span class="thought-emoji">💡</span>
+                        <span class="thought-text">"The example really helped me know what to say."</span>
+                    </div>
+                    <div class="thought-bubble neutral">
+                        <span class="thought-emoji">🤔</span>
+                        <span class="thought-text">"That was more interesting than usual textbook stuff."</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-card" style="margin-bottom: 2rem; border: 2px solid var(--green);">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <span class="insight-title">KEY INSIGHT</span>
+                </div>
+                <div class="insight-content">
+                    <p><strong>Tools Enable Recovery</strong></p>
+                    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>Your path: No goal → Textbook → Alignment Check → <strong>RECOVERY!</strong></p>
+                        <p style="margin-top: 0.5rem;">The alignment checklist forced you to confront what was missing. That moment of friction was valuable—it prevented a mediocre lesson.</p>
+                    </div>
+                    <div class="insight-highlight" style="background: #ECFDF5; border-left: 4px solid var(--green);">
+                        Recovery is always possible when you use the right tools.<br>
+                        <strong>A messy start doesn't mean a bad outcome.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUTCOME: Textbook Recovered No Model (No Goal → Textbook → Align Check Recovery → No Model) -->
+    <div class="screen" id="screen-outcome-textbook-recovered-no-model">
+        <div class="container">
+            <div class="outcome-header">
+                <h1 class="outcome-title">LESSON RESULTS</h1>
+                <p class="outcome-subtitle" style="color: var(--warning);">Partial Recovery</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Total Class Time</div>
+                    <div class="metric-value">90 min</div>
+                </div>
+                <div class="metric-card highlight">
+                    <div class="metric-label">Student Speaking Time</div>
+                    <div class="metric-value">28 min</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 31%; background: var(--warning);"></div>
+                    </div>
+                    <div class="metric-subtext">31% of class time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Planning Time Used</div>
+                    <div class="metric-value">8 min</div>
+                    <div class="metric-subtext">Goal + adaptation only</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Student Participation</div>
+                    <div class="metric-value">67%</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 67%; background: var(--warning);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="outcome-summary" style="background: #FEF3C7; border-left: 4px solid var(--warning);">
+                <h3>What Happened:</h3>
+                <p>You recovered from having no goal—the alignment checklist forced you to define what you wanted and adapt the activity. Good save!</p>
+                <p style="margin-top: 1rem;">But then you skipped modeling. Students had a purposeful activity but weren't quite sure what "good" looked like.</p>
+                <p style="margin-top: 1rem;">Some figured it out, others stayed superficial. You spent class time re-explaining instead of students practicing.</p>
+                <p style="margin-top: 1rem;"><strong>You did the hard work of recovery, then undermined it by rushing the delivery.</strong></p>
+            </div>
+
+            <div class="student-thoughts">
+                <h3>Student Experience:</h3>
+                <div class="thought-bubbles">
+                    <div class="thought-bubble neutral">
+                        <span class="thought-emoji">😐</span>
+                        <span class="thought-text">"I think I understand what we're supposed to do..."</span>
+                    </div>
+                    <div class="thought-bubble negative">
+                        <span class="thought-emoji">😕</span>
+                        <span class="thought-text">"Is this right? I'm not sure if I'm doing it correctly."</span>
+                    </div>
+                    <div class="thought-bubble positive">
+                        <span class="thought-emoji">😊</span>
+                        <span class="thought-text">"At least it wasn't just boring Q&A from the book."</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-card" style="margin-bottom: 2rem; border: 2px solid var(--warning);">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <span class="insight-title">KEY INSIGHT</span>
+                </div>
+                <div class="insight-content">
+                    <p><strong>Incomplete Recovery = Incomplete Results</strong></p>
+                    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>Compare your outcomes:</p>
+                        <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+                            <li>Recovery + Model: 42 min speaking (47%)</li>
+                            <li>Recovery + No Model: 28 min speaking (31%)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">5 minutes of modeling = 14 more minutes of quality speaking.</p>
+                    </div>
+                    <div class="insight-highlight" style="background: #FEF3C7; border-left: 4px solid var(--warning);">
+                        Recovery got you a better activity. But delivery determines impact.<br>
+                        <strong>Don't stop at planning—execute with modeling.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUTCOME: Textbook Aimless with Model (No Goal → Textbook → Skip Check → Model) -->
+    <div class="screen" id="screen-outcome-textbook-aimless-model">
+        <div class="container">
+            <div class="outcome-header">
+                <h1 class="outcome-title">LESSON RESULTS</h1>
+                <p class="outcome-subtitle" style="color: var(--warning);">Polished But Pointless</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Total Class Time</div>
+                    <div class="metric-value">90 min</div>
+                </div>
+                <div class="metric-card highlight">
+                    <div class="metric-label">Student Speaking Time</div>
+                    <div class="metric-value">25 min</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 28%; background: var(--warning);"></div>
+                    </div>
+                    <div class="metric-subtext">28% of class time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Planning Time Used</div>
+                    <div class="metric-value">7 min</div>
+                    <div class="metric-subtext">Textbook + modeling prep</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Student Participation</div>
+                    <div class="metric-value">58%</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 58%; background: var(--warning);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="outcome-summary" style="background: #FEF3C7; border-left: 4px solid var(--warning);">
+                <h3>What Happened:</h3>
+                <p>You modeled the textbook activity beautifully. Students saw a clear example of the Q&A exchange.</p>
+                <p style="margin-top: 1rem;">But here's the problem: you modeled a generic activity without any real purpose. Students knew exactly HOW to do it... but not WHY.</p>
+                <p style="margin-top: 1rem;">They went through the motions, finished the scripted questions quickly, then waited. "Are we done?"</p>
+                <p style="margin-top: 1rem;"><strong>Good execution of a mediocre activity is still mediocre.</strong></p>
+            </div>
+
+            <div class="student-thoughts">
+                <h3>Student Experience:</h3>
+                <div class="thought-bubbles">
+                    <div class="thought-bubble neutral">
+                        <span class="thought-emoji">😐</span>
+                        <span class="thought-text">"Okay, I did all three questions. Now what?"</span>
+                    </div>
+                    <div class="thought-bubble negative">
+                        <span class="thought-emoji">🥱</span>
+                        <span class="thought-text">"This was easy but kind of pointless."</span>
+                    </div>
+                    <div class="thought-bubble neutral">
+                        <span class="thought-emoji">🤷</span>
+                        <span class="thought-text">"I guess we practiced speaking? Sort of?"</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-card" style="margin-bottom: 2rem; border: 2px solid var(--warning);">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <span class="insight-title">KEY INSIGHT</span>
+                </div>
+                <div class="insight-content">
+                    <p><strong>Modeling Amplifies—It Doesn't Fix</strong></p>
+                    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>Modeling a purposeful activity: <strong>Excellent results</strong></p>
+                        <p>Modeling a generic activity: <strong>Efficient mediocrity</strong></p>
+                        <p style="margin-top: 0.75rem;">The quality of what you model matters as much as the modeling itself.</p>
+                    </div>
+                    <div class="insight-highlight" style="background: #FEF3C7; border-left: 4px solid var(--warning);">
+                        Before modeling, ask: <em>"Is this activity worth doing well?"</em><br>
+                        <strong>Great execution can't save a weak activity.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUTCOME: Textbook Aimless (No Goal → Textbook → Skip Check → No Model) - WORST CASE -->
+    <div class="screen" id="screen-outcome-textbook-aimless">
+        <div class="container">
+            <div class="outcome-header">
+                <h1 class="outcome-title">LESSON RESULTS</h1>
+                <p class="outcome-subtitle" style="color: var(--coral);">Status Quo Trap</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Total Class Time</div>
+                    <div class="metric-value">90 min</div>
+                </div>
+                <div class="metric-card highlight">
+                    <div class="metric-label">Student Speaking Time</div>
+                    <div class="metric-value">12 min</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 13%; background: var(--coral);"></div>
+                    </div>
+                    <div class="metric-subtext">13% of class time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Planning Time Used</div>
+                    <div class="metric-value">3 min</div>
+                    <div class="metric-subtext">"Open to page 47"</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Student Participation</div>
+                    <div class="metric-value">35%</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" style="width: 35%; background: var(--coral);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="outcome-summary" style="background: #FEE2E2; border-left: 4px solid var(--coral);">
+                <h3>What Happened:</h3>
+                <p>"Open your books to page 47. Work in pairs. Ask and answer the questions."</p>
+                <p style="margin-top: 1rem;">No goal. Generic activity. No model. Students had no idea what success looked like or why they were doing this.</p>
+                <p style="margin-top: 1rem;">Half the class finished in 3 minutes and sat there. Some pairs never really started. You spent most of class time managing confusion and re-explaining.</p>
+                <p style="margin-top: 1rem;"><strong>This is what "speaking practice" looks like when nothing is planned.</strong></p>
+            </div>
+
+            <div class="student-thoughts">
+                <h3>Student Experience:</h3>
+                <div class="thought-bubbles">
+                    <div class="thought-bubble negative">
+                        <span class="thought-emoji">😴</span>
+                        <span class="thought-text">"We're done. That took 2 minutes."</span>
+                    </div>
+                    <div class="thought-bubble negative">
+                        <span class="thought-emoji">😕</span>
+                        <span class="thought-text">"What are we supposed to be doing exactly?"</span>
+                    </div>
+                    <div class="thought-bubble negative">
+                        <span class="thought-emoji">📱</span>
+                        <span class="thought-text">"I'll just check my phone while my partner figures it out."</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-card" style="margin-bottom: 2rem; border: 2px solid var(--coral);">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <span class="insight-title">KEY INSIGHT</span>
+                </div>
+                <div class="insight-content">
+                    <p><strong>Minimum Effort = Minimum Learning</strong></p>
+                    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p>Your path:</p>
+                        <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+                            <li>❌ No goal defined</li>
+                            <li>❌ Generic textbook activity</li>
+                            <li>❌ No alignment check</li>
+                            <li>❌ No modeling</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;">Every shortcut compounded. 3 minutes of planning → 12 minutes of actual speaking.</p>
+                    </div>
+                    <div class="insight-highlight" style="background: #FEE2E2; border-left: 4px solid var(--coral);">
+                        You "saved" 15 minutes of planning.<br>
+                        Students lost 40+ minutes of speaking practice.<br>
+                        <strong>Short-term efficiency ≠ Long-term effectiveness.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button class="btn btn-primary" onclick="restartSimulation()">
+                    ↺ Try Another Path
+                </button>
+                <button class="btn btn-secondary" onclick="goToScreen('screen-insights')">
+                    View Key Insights (Optional)
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- SCREEN 12: Key Insights -->
     <div class="screen" id="screen-insights">
         <div class="container insights-container">
@@ -4884,6 +5791,48 @@
                     break;
                 case 'screen-outcome-textbook-no-model':
                     state.OUTCOME_VIEWED = 'textbook_no_model';
+                    break;
+                // No-goal + Textbook path states
+                case 'screen-feedback2-textbook-no-goal':
+                    state.PLANNING_TIME_REMAINING = 17;
+                    state.ACTIVITY_SOURCE = 'textbook';
+                    break;
+                case 'screen-feedback3-textbook-no-goal':
+                    state.PLANNING_TIME_REMAINING = 12;
+                    state.CHECKED_ALIGNMENT = true;
+                    state.GOAL_TYPE = 'performance_late';
+                    state.APPROACH = 'recovered_late';
+                    state.RECOVERY_METHOD = 'checklist_forced_goal';
+                    break;
+                case 'screen-feedback3b-textbook-no-goal':
+                    state.PLANNING_TIME_REMAINING = 17;
+                    state.CHECKED_ALIGNMENT = false;
+                    break;
+                case 'screen-feedback4-textbook-no-goal':
+                    state.PLANNING_TIME_REMAINING = 7;
+                    state.MODELED = true;
+                    break;
+                case 'screen-feedback4a-textbook-no-goal':
+                    state.MODELED = false;
+                    break;
+                case 'screen-feedback4-textbook-no-goal-skip':
+                    state.PLANNING_TIME_REMAINING = 12;
+                    state.MODELED = true;
+                    break;
+                case 'screen-feedback4a-textbook-no-goal-skip':
+                    state.MODELED = false;
+                    break;
+                case 'screen-outcome-textbook-recovered':
+                    state.OUTCOME_VIEWED = 'textbook_recovered';
+                    break;
+                case 'screen-outcome-textbook-recovered-no-model':
+                    state.OUTCOME_VIEWED = 'textbook_recovered_no_model';
+                    break;
+                case 'screen-outcome-textbook-aimless-model':
+                    state.OUTCOME_VIEWED = 'textbook_aimless_model';
+                    break;
+                case 'screen-outcome-textbook-aimless':
+                    state.OUTCOME_VIEWED = 'textbook_aimless';
                     break;
             }
         }
