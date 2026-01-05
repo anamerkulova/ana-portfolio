@@ -323,9 +323,16 @@
         }
 
         .option-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-top: 0.5rem;
         }
 
         .option-example {
@@ -770,16 +777,6 @@
     </style>
 </head>
 <body>
-    <!-- Help Tooltip -->
-    <div class="tooltip" id="tooltip">
-        <h4>📚 Job Aids Available</h4>
-        <ul>
-            <li>AI Prompt Template</li>
-            <li>Quality Checklist</li>
-            <li>Performance Goal Guide</li>
-        </ul>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">Click [?] icons throughout for guidance.</p>
-    </div>
 
     <!-- SCREEN 1: Title -->
     <div class="screen active" id="screen-title">
@@ -799,7 +796,6 @@
             <span class="timer-icon">⏱️</span>
             <span id="timer-display">20 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="scenario-box">
@@ -839,9 +835,6 @@
                     <strong>Tomorrow at 10 AM, you want to walk in confident with an activity that actually works.</strong>
                 </div>
 
-                <p class="help-note">
-                    Throughout this simulation, you can click <strong>[?]</strong> to access job aids (AI Prompt Template, Quality Checklist, Performance Goal Guide).
-                </p>
             </div>
 
             <button class="btn btn-primary btn-large" onclick="goToScreen('screen-decision1')" style="width: 100%;">
@@ -856,7 +849,6 @@
             <span class="timer-icon">⏱️</span>
             <span>20 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -875,7 +867,7 @@
                         <span class="option-icon">🎯</span>
                         <span class="option-title">"Students will describe their neighborhood to help a new resident"</span>
                     </div>
-                    <div class="option-meta">Performance-based, specific context | <span style="font-weight: 500;">Preparation time: -3 minutes</span></div>
+                    <div class="option-meta">⏱️ 3 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback1c')">
@@ -883,11 +875,10 @@
                         <span class="option-icon">🗣️</span>
                         <span class="option-title">"Students will practice speaking"</span>
                     </div>
-                    <div class="option-meta">General speaking practice | <span style="font-weight: 500;">Preparation time: -1 minute</span></div>
+                    <div class="option-meta">⏱️ 1 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help choosing? View Performance Goal Guide</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-intro')">
@@ -1017,7 +1008,6 @@
             <span class="timer-icon">⏱️</span>
             <span>17 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -1036,7 +1026,7 @@
                         <span class="option-icon">📚</span>
                         <span class="option-title">"Use textbook activity"</span>
                     </div>
-                    <div class="option-meta">Quick but generic | <span style="font-weight: 500;">Preparation time: -2 minutes</span></div>
+                    <div class="option-meta">⏱️ 2 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback2')">
@@ -1044,10 +1034,7 @@
                         <span class="option-icon">🤖</span>
                         <span class="option-title">"Write detailed AI prompt with context"</span>
                     </div>
-                    <div class="option-meta">Custom, aligned | 8 minutes</div>
-                    <div class="option-example">
-                        "Create a roleplay for A2/B1 adults where Partner A is a new resident asking about local amenities (supermarket, pharmacy, bus stops) and Partner B is a helpful neighbor. Include: specific questions about locations, opening hours, and transportation. Language focus: giving directions, describing places, making recommendations."
-                    </div>
+                    <div class="option-meta">⏱️ 8 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback2-quick-perf')">
@@ -1055,14 +1042,10 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Quick AI prompt"</span>
                     </div>
-                    <div class="option-meta">Fast but may not align | 5 minutes</div>
-                    <div class="option-example">
-                        "Create a roleplay about describing neighborhoods"
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View AI Prompt Template</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1')">
@@ -1147,7 +1130,6 @@
             <span class="timer-icon">⏱️</span>
             <span>12 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -1166,10 +1148,7 @@
                         <span class="option-icon">📋</span>
                         <span class="option-title">"Check if this matches my goal"</span>
                     </div>
-                    <div class="option-meta">Verify alignment | 5 minutes</div>
-                    <div class="option-example">
-                        Compare the roleplay to your performance goal
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback3b-quick-perf')">
@@ -1177,11 +1156,10 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Trust it and move on—it looks good"</span>
                     </div>
-                    <div class="option-meta">No verification | 0 minutes</div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-quick-perf')">
@@ -1333,7 +1311,6 @@
             <span class="timer-icon">⏱️</span>
             <span id="timer-d4-quick">7 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -1352,7 +1329,7 @@
                         <span class="option-icon">🎭</span>
                         <span class="option-title">"Yes, model it with a student first"</span>
                     </div>
-                    <div class="option-meta">Show what success looks like | <span style="font-weight: 500;">Lesson time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback4a-quick-perf')">
@@ -1360,7 +1337,7 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"No, just let them start practicing"</span>
                     </div>
-                    <div class="option-meta">Saves time but risky | <span style="font-weight: 500;">Lesson time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -1557,7 +1534,6 @@
             <span class="timer-icon">⏱️</span>
             <span>15 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -1576,10 +1552,7 @@
                         <span class="option-icon">📋</span>
                         <span class="option-title">"Check if this matches my goal"</span>
                     </div>
-                    <div class="option-meta">Verify alignment | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
-                    <div class="option-example">
-                        Compare the textbook activity to your performance goal
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback3b-textbook')">
@@ -1587,11 +1560,10 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"It's from the textbook, so it should be fine"</span>
                     </div>
-                    <div class="option-meta">No verification | <span style="font-weight: 500;">Preparation time: 0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-textbook')">
@@ -1741,7 +1713,6 @@
             <span class="timer-icon">⏱️</span>
             <span id="timer-d4-textbook">10 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -1760,7 +1731,7 @@
                         <span class="option-icon">🎭</span>
                         <span class="option-title">"Yes, model it with a student first"</span>
                     </div>
-                    <div class="option-meta">Show what success looks like | <span style="font-weight: 500;">Lesson time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback4a-textbook')">
@@ -1768,7 +1739,7 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"No, just let them start practicing"</span>
                     </div>
-                    <div class="option-meta">Saves time but risky | <span style="font-weight: 500;">Lesson time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -1918,7 +1889,6 @@
             <span class="timer-icon">⏱️</span>
             <span>19 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -1937,10 +1907,7 @@
                         <span class="option-icon">🤖</span>
                         <span class="option-title">"Write detailed AI prompt with context"</span>
                     </div>
-                    <div class="option-meta">Custom, uses template | 8 minutes</div>
-                    <div class="option-example">
-                        Use the AI Prompt Template to write a comprehensive prompt
-                    </div>
+                    <div class="option-meta">⏱️ 8 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback2c')">
@@ -1948,10 +1915,7 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Quick AI prompt"</span>
                     </div>
-                    <div class="option-meta">Fast, matches your current approach | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
-                    <div class="option-example">
-                        "Create a roleplay about describing neighborhoods"
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback2-textbook-no-goal')">
@@ -1959,11 +1923,10 @@
                         <span class="option-icon">📚</span>
                         <span class="option-title">"Use textbook activity"</span>
                     </div>
-                    <div class="option-meta">Quick but generic | <span style="font-weight: 500;">Preparation time: -2 minutes</span></div>
+                    <div class="option-meta">⏱️ 2 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View AI Prompt Template</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback1c')">
@@ -2045,7 +2008,6 @@
             <span class="timer-icon">⏱️</span>
             <span>17 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -2064,7 +2026,7 @@
                         <span class="option-icon">✅</span>
                         <span class="option-title">"Let me think about what I actually want"</span>
                     </div>
-                    <div class="option-meta">Reflective, catches problems | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback3b-textbook-no-goal')">
@@ -2072,11 +2034,10 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"Skip - it's from the textbook, it's fine"</span>
                     </div>
-                    <div class="option-meta">Fast but risky | <span style="font-weight: 500;">Preparation time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-textbook-no-goal')">
@@ -2208,7 +2169,6 @@
             <span class="timer-icon">⏱️</span>
             <span>12 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -2227,7 +2187,7 @@
                         <span class="option-icon">🎭</span>
                         <span class="option-title">"Yes, show them what good looks like"</span>
                     </div>
-                    <div class="option-meta">Maximum clarity, best results | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback4a-textbook-no-goal')">
@@ -2235,7 +2195,7 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"No, just let them practice"</span>
                     </div>
-                    <div class="option-meta">Saves time but risky | <span style="font-weight: 500;">Preparation time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -2253,7 +2213,6 @@
             <span class="timer-icon">⏱️</span>
             <span>17 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -2272,7 +2231,7 @@
                         <span class="option-icon">🎭</span>
                         <span class="option-title">"Yes, model the dialogue"</span>
                     </div>
-                    <div class="option-meta">Shows expectations | <span style="font-weight: 500;">Preparation time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback4a-textbook-no-goal-skip')">
@@ -2280,7 +2239,7 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"No, just start the activity"</span>
                     </div>
-                    <div class="option-meta">Fastest option | <span style="font-weight: 500;">Preparation time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -2614,7 +2573,6 @@
             <span class="timer-icon">⏱️</span>
             <span>11 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -2639,10 +2597,7 @@
                         <span class="option-icon">📋</span>
                         <span class="option-title">"Quick check with the checklist"</span>
                     </div>
-                    <div class="option-meta">Verify alignment | 5 minutes</div>
-                    <div class="option-example">
-                        Confirm the roleplay matches your (now-defined) goal
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback3b-recovered')">
@@ -2650,11 +2605,10 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Trust it and move on—it looks good"</span>
                     </div>
-                    <div class="option-meta">No verification | 0 minutes</div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2-recovery')">
@@ -2927,7 +2881,6 @@
             <span class="timer-icon">⏱️</span>
             <span>9 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -2946,10 +2899,7 @@
                         <span class="option-icon">📋</span>
                         <span class="option-title">"Check it against my lesson goal using checklist"</span>
                     </div>
-                    <div class="option-meta">Careful verification | 5 minutes</div>
-                    <div class="option-example">
-                        Does this activity help students "describe neighborhood to help new resident"? Check vocabulary level, authenticity, speaking time.
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback3b')">
@@ -2957,11 +2907,10 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Trust it and move on—looks good enough"</span>
                     </div>
-                    <div class="option-meta">No verification | 0 minutes</div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2')">
@@ -2977,7 +2926,6 @@
             <span class="timer-icon">⏱️</span>
             <span>14 minutes remaining</span>
         </div>
-        <button class="help-btn" onclick="toggleTooltip()">?</button>
 
         <div class="container">
             <div class="progress">
@@ -2996,10 +2944,7 @@
                         <span class="option-icon">📋</span>
                         <span class="option-title">"Check it against my lesson goal using checklist"</span>
                     </div>
-                    <div class="option-meta">Careful verification | 5 minutes</div>
-                    <div class="option-example" style="color: var(--warning);">
-                        But wait... you didn't set a goal. What would you check it against?
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback3b')">
@@ -3007,14 +2952,10 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">"Trust it and move on—looks good enough"</span>
                     </div>
-                    <div class="option-meta">No verification | 0 minutes</div>
-                    <div class="option-example">
-                        It's late. You're tired. It's fine. Probably.
-                    </div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
-            <a href="#" class="help-link" onclick="toggleTooltip(); return false;">? Need help? View Quality Checklist</a>
 
             <div class="final-buttons" style="margin-top: 1.5rem;">
                 <button class="btn btn-secondary" onclick="goToScreen('screen-feedback2c')">
@@ -3207,10 +3148,7 @@
                         <span class="option-icon">🎯</span>
                         <span class="option-title">Go Back & Define Goal Now</span>
                     </div>
-                    <div class="option-meta" style="color: var(--coral);">TIME COST: +5 minutes</div>
-                    <div class="option-example">
-                        Take 5 minutes to define a clear performance goal. This will let you verify alignment properly.
-                    </div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-outcome7')" style="opacity: 0.85;">
@@ -3218,10 +3156,7 @@
                         <span class="option-icon">⚡</span>
                         <span class="option-title">Continue Without Goal</span>
                     </div>
-                    <div class="option-meta">TIME COST: 0 minutes (but risky!)</div>
-                    <div class="option-example">
-                        Skip alignment check and move forward. You'll figure it out as you go.
-                    </div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -3354,7 +3289,7 @@
                         <span class="option-icon">🎭</span>
                         <span class="option-title">"Yes, model it with a student first"</span>
                     </div>
-                    <div class="option-meta">Show what success looks like | <span style="font-weight: 500;">Lesson time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback4a-recovered')">
@@ -3362,7 +3297,7 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"No, just let them start practicing"</span>
                     </div>
-                    <div class="option-meta">Saves time but risky | <span style="font-weight: 500;">Lesson time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -3402,13 +3337,16 @@
 
                 <p>The other students watch attentively.</p>
 
-                <div class="modeling-points">
-                    <p style="font-weight: 600; margin-bottom: 0.5rem;">💭 Students thinking:</p>
-                    <ul>
-                        <li>"Oh, I see what we need to do!"</li>
-                        <li>"That doesn't look too hard"</li>
-                        <li>"I can do this"</li>
-                    </ul>
+                <div class="thoughts-section">
+                    <div class="thoughts-title">
+                        <span>💭</span>
+                        <span>WHAT STUDENTS ARE THINKING</span>
+                    </div>
+                    <div class="thought-bubbles">
+                        <div class="thought"><span>😊</span> "Oh, I see what we need to do!"</div>
+                        <div class="thought"><span>😌</span> "That doesn't look too hard"</div>
+                        <div class="thought"><span>😊</span> "I can do this"</div>
+                    </div>
                 </div>
 
                 <div class="checkmark-list">
@@ -3468,13 +3406,16 @@
                     "Okay everyone, you're going to work in pairs. Person A describes their neighborhood to a new resident. Begin!"
                 </div>
 
-                <div class="modeling-points" style="background: #FEF3C7;">
-                    <p style="font-weight: 600; margin-bottom: 0.5rem;">💭 Students thinking:</p>
-                    <ul>
-                        <li>"Wait, what do I say first?"</li>
-                        <li>"What does a good conversation look like?"</li>
-                        <li>"How detailed should I be?"</li>
-                    </ul>
+                <div class="thoughts-section" style="background: #FEF3C7;">
+                    <div class="thoughts-title">
+                        <span>💭</span>
+                        <span>WHAT STUDENTS ARE THINKING</span>
+                    </div>
+                    <div class="thought-bubbles">
+                        <div class="thought" style="background: white;"><span>🤔</span> "Wait, what do I say first?"</div>
+                        <div class="thought" style="background: white;"><span>😕</span> "What does a good conversation look like?"</div>
+                        <div class="thought" style="background: white;"><span>🤔</span> "How detailed should I be?"</div>
+                    </div>
                 </div>
 
                 <p style="margin: 1rem 0;">Several students raise their hands with questions. You spend time clarifying.</p>
@@ -3804,7 +3745,7 @@
                         <span class="option-icon">🎭</span>
                         <span class="option-title">"Yes, model it with a student first"</span>
                     </div>
-                    <div class="option-meta">Show what success looks like | <span style="font-weight: 500;">Lesson time: -5 minutes</span></div>
+                    <div class="option-meta">⏱️ 5 min</div>
                 </div>
 
                 <div class="option-card" onclick="goToScreen('screen-feedback4a')">
@@ -3812,7 +3753,7 @@
                         <span class="option-icon">⏭️</span>
                         <span class="option-title">"No, just let them start practicing"</span>
                     </div>
-                    <div class="option-meta">Saves time but risky | <span style="font-weight: 500;">Lesson time: -0 minutes</span></div>
+                    <div class="option-meta">⏱️ 0 min</div>
                 </div>
             </div>
 
@@ -5116,6 +5057,32 @@
                 <p class="outcome-subtitle" style="color: var(--green);">Late Recovery Success</p>
             </div>
 
+            <div class="decisions-summary" style="border-left: 4px solid var(--green);">
+                <h3>Your Decisions:</h3>
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Started with no clear goal</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Used textbook activity</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Checked alignment (caught missing goal!)</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Went back and defined goal</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Modeled with student first</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label">Total Class Time</div>
@@ -5204,6 +5171,32 @@
             <div class="outcome-header">
                 <h1 class="outcome-title">LESSON RESULTS</h1>
                 <p class="outcome-subtitle" style="color: var(--warning);">Partial Recovery</p>
+            </div>
+
+            <div class="decisions-summary" style="border-left: 4px solid var(--warning);">
+                <h3>Your Decisions:</h3>
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Started with no clear goal</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Used textbook activity</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Checked alignment (caught missing goal!)</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Went back and defined goal</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Skipped modeling</span>
+                    </div>
+                </div>
             </div>
 
             <div class="metrics-grid">
@@ -5300,6 +5293,28 @@
                 <p class="outcome-subtitle" style="color: var(--warning);">Polished But Pointless</p>
             </div>
 
+            <div class="decisions-summary" style="border-left: 4px solid var(--warning);">
+                <h3>Your Decisions:</h3>
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Started with no clear goal</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Used textbook activity</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Skipped alignment check</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Modeled with student first</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label">Total Class Time</div>
@@ -5389,6 +5404,28 @@
             <div class="outcome-header">
                 <h1 class="outcome-title">LESSON RESULTS</h1>
                 <p class="outcome-subtitle" style="color: var(--coral);">Status Quo Trap</p>
+            </div>
+
+            <div class="decisions-summary" style="border-left: 4px solid var(--coral);">
+                <h3>Your Decisions:</h3>
+                <div class="checkmark-list">
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Started with no clear goal</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span class="checkmark">✓</span>
+                        <span>Used textbook activity</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Skipped alignment check</span>
+                    </div>
+                    <div class="checkmark-item">
+                        <span style="color: #f56565;">✗</span>
+                        <span>Skipped modeling</span>
+                    </div>
+                </div>
             </div>
 
             <div class="metrics-grid">
@@ -5582,7 +5619,7 @@
                     COMPARE ALL 8 PATHS →
                 </button>
                 <button class="btn btn-primary" onclick="goToScreen('screen-finish')">
-                    FINISH & DOWNLOAD JOB AIDS →
+                    FINISH →
                 </button>
             </div>
         </div>
@@ -5595,12 +5632,6 @@
                 <h1>🎉 Thank You for Completing the Simulation!</h1>
                 <p>You've experienced the optimal path for planning effective speaking practice.</p>
 
-                <div style="background: var(--white); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
-                    <h3 style="margin-bottom: 1rem;">📥 Job Aids (Coming Soon)</h3>
-                    <p style="color: var(--text-secondary);">
-                        Download links for AI Prompt Template, Quality Checklist, and Performance Goal Guide will be available here.
-                    </p>
-                </div>
 
                 <div class="final-buttons">
                     <button class="btn btn-secondary" onclick="restartSimulation()">
