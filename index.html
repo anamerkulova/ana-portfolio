@@ -25,14 +25,13 @@
 
             <!-- Project 1: Flagship -->
             <div class="project-card">
-                <h3>[Title of Your Articulate Module]</h3>
+                <h3>Speaking Practice Planning for English Teachers</h3>
                 <p class="project-type">E-Learning Design | Interactive Module</p>
                 <p class="project-description">
-                    Self-paced microlearning module designed using adult learning
-                    principles, featuring scenarios, knowledge checks, and practical
-                    frameworks facilitators can apply immediately.
+                    Currently developing a microlearning module from prototype to
+                    Articulate Rise project.
                 </p>
-                <a href="project-articulate.html" class="project-link">View Project →</a>
+                <a href="#" class="project-link" onclick="openProjectModal(); return false;">View Project →</a>
             </div>
 
             <!-- Project 2: Real-World -->
@@ -109,5 +108,50 @@
             </div>
         </section>
     </main>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal" onclick="closeProjectModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <h2>Speaking Practice Planning for English Teachers</h2>
+
+            <div class="modal-meta">
+                <span class="meta-tag">Category: E-Learning Module</span>
+                <span class="meta-tag">Stage: Testing prototype with teachers</span>
+            </div>
+
+            <div class="modal-section">
+                <h3>Tools Used</h3>
+                <p>Claude Code and Figma</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Project Description</h3>
+                <p>A multiple path 'choose your own adventure' microlearning designed to highlight best practices in teaching a foreign language.</p>
+            </div>
+
+            <div class="modal-cta">
+                <a href="speaking-practice-scenario.html" class="btn btn-primary" target="_blank">View Prototype →</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openProjectModal() {
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('projectModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeProjectModal();
+        });
+    </script>
 </body>
 </html>
