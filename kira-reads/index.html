@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Adventure Tracker 📚</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .goal-summary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .goal-summary h2 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .goal-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .overall-progress {
+            margin-bottom: 30px;
+        }
+
+        .overall-bar {
+            background: #e0e0e0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .overall-fill {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            height: 100%;
+            border-radius: 15px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .mystery-gift {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 3px dashed #f5576c;
+        }
+
+        .mystery-gift h3 {
+            color: #d63447;
+            margin-bottom: 10px;
+        }
+
+        .mystery-emoji {
+            font-size: 3em;
+            margin: 10px 0;
+        }
+
+        .book-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .book-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .book-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            flex: 1;
+        }
+
+        .book-author {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .book-difficulty {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .book-difficulty.easy {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .book-difficulty.medium {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .book-difficulty.hard {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .page-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .page-input-group label {
+            color: #666;
+            min-width: 120px;
+        }
+
+        .page-input-group input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .page-input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .encouragement {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            color: #667eea;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .celebration {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: none;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .celebration.show {
+            display: block;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        .confetti {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Your Reading Adventure! 🌟</h1>
+        <p class="subtitle">6 Amazing Books • 9 Weeks • 1 Incredible Journey</p>
+
+        <div class="goal-summary">
+            <h2>Your Reading Challenge</h2>
+            <div class="goal-stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalPages">0</span>
+                    <span class="stat-label">Pages Read</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="daysLeft">63</span>
+                    <span class="stat-label">Days to Go</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="booksFinished">0</span>
+                    <span class="stat-label">Books Done!</span>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.95em;">📅 Deadline: April 1st • Target: ~27 pages/day (but read at your own pace!)</p>
+        </div>
+
+        <div class="overall-progress">
+            <h3 style="color: #667eea; margin-bottom: 10px;">Overall Progress</h3>
+            <div class="overall-bar">
+                <div class="overall-fill" id="overallFill" style="width: 0%;">
+                    <span id="overallPercent">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mystery-gift floating">
+            <h3>🎁 Mystery Surprise Awaits! 🎁</h3>
+            <div class="mystery-emoji">🎉 ??? 🎉</div>
+            <p>Finish all 6 books and discover something special!</p>
+        </div>
+
+        <div id="booksList"></div>
+
+        <div class="encouragement" id="encouragement">
+            You've got this! Every page is an adventure! 🌟
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="celebration" id="celebration">
+        <div class="confetti">🎉 🎊 ✨ 🌟 🎉</div>
+        <h2 style="color: #667eea; margin-bottom: 20px;">Amazing Progress!</h2>
+        <p style="font-size: 1.2em; margin-bottom: 20px;" id="celebrationMessage"></p>
+        <button onclick="closeCelebration()">Keep Reading! 📚</button>
+    </div>
+
+    <script>
+        const books = [
+            {
+                title: "The Wrong Shoes",
+                author: "Tom Percival",
+                totalPages: 336,
+                difficulty: "easy",
+                color: "#4facfe"
+            },
+            {
+                title: "The Beck",
+                author: "Anthony McGowan",
+                totalPages: 140,
+                difficulty: "easy",
+                color: "#43e97b"
+            },
+            {
+                title: "Birdie",
+                author: "J.P. Rose",
+                totalPages: 256,
+                difficulty: "medium",
+                color: "#fa709a"
+            },
+            {
+                title: "People Like Stars",
+                author: "Patrice Lawrence",
+                totalPages: 296,
+                difficulty: "medium",
+                color: "#fee140"
+            },
+            {
+                title: "Fallout",
+                author: "Lesley Parr",
+                totalPages: 325,
+                difficulty: "medium",
+                color: "#30cfd0"
+            },
+            {
+                title: "The Age of Enchantment",
+                author: "Anna James",
+                totalPages: 350,
+                difficulty: "hard",
+                color: "#a8edea"
+            }
+        ];
+
+        const encouragements = [
+            "You're doing brilliantly! Keep going! 🌟",
+            "Every page brings you closer to the mystery gift! 🎁",
+            "What an adventure you're having! 📚",
+            "You're unstoppable! The authors would be so proud! ✨",
+            "Reading makes you stronger every day! 💪",
+            "Look how far you've come already! 🚀",
+            "You're a reading superstar! ⭐",
+            "These stories are lucky to have you as a reader! 💖"
+        ];
+
+        // Load saved progress
+        let progress = JSON.parse(localStorage.getItem('readingProgress')) || books.map(b => ({ pagesRead: 0 }));
+
+        function saveProgress() {
+            localStorage.setItem('readingProgress', JSON.stringify(progress));
+            updateStats();
+        }
+
+        function updateStats() {
+            const totalPagesRead = progress.reduce((sum, p) => sum + p.pagesRead, 0);
+            const totalPages = books.reduce((sum, b) => sum + b.totalPages, 0);
+            const booksFinished = progress.filter((p, i) => p.pagesRead >= books[i].totalPages).length;
+            const percentage = Math.min(100, Math.round((totalPagesRead / totalPages) * 100));
+
+            document.getElementById('totalPages').textContent = totalPagesRead;
+            document.getElementById('booksFinished').textContent = booksFinished;
+            document.getElementById('overallPercent').textContent = percentage + '%';
+            document.getElementById('overallFill').style.width = percentage + '%';
+
+            // Random encouragement
+            const randomEnc = encouragements[Math.floor(Math.random() * encouragements.length)];
+            document.getElementById('encouragement').textContent = randomEnc;
+
+            // Check for celebrations
+            if (totalPagesRead > 0 && totalPagesRead % 100 === 0) {
+                celebrate(`You've read ${totalPagesRead} pages! That's incredible! 🎉`);
+            }
+
+            if (booksFinished > 0) {
+                const prevFinished = parseInt(localStorage.getItem('prevBooksFinished') || '0');
+                if (booksFinished > prevFinished) {
+                    celebrate(`Book ${booksFinished} complete! You're amazing! 📚✨`);
+                    localStorage.setItem('prevBooksFinished', booksFinished);
+                }
+            }
+        }
+
+        function celebrate(message) {
+            document.getElementById('celebrationMessage').textContent = message;
+            document.getElementById('celebration').classList.add('show');
+            document.getElementById('overlay').classList.add('show');
+        }
+
+        function closeCelebration() {
+            document.getElementById('celebration').classList.remove('show');
+            document.getElementById('overlay').classList.remove('show');
+        }
+
+        function renderBooks() {
+            const container = document.getElementById('booksList');
+            container.innerHTML = books.map((book, index) => {
+                const pagesRead = progress[index].pagesRead;
+                const percent = Math.min(100, Math.round((pagesRead / book.totalPages) * 100));
+
+                return `
+                    <div class="book-card">
+                        <div class="book-header">
+                            <div style="flex: 1;">
+                                <div class="book-title">${book.title}</div>
+                                <div class="book-author">by ${book.author}</div>
+                            </div>
+                            <div class="book-difficulty ${book.difficulty}">
+                                ${book.difficulty === 'easy' ? '⭐ Quick Read' :
+                                  book.difficulty === 'medium' ? '⭐⭐ Medium' : '⭐⭐⭐ Epic'}
+                            </div>
+                        </div>
+
+                        <div class="page-input-group">
+                            <label>Pages read:</label>
+                            <input type="number"
+                                   min="0"
+                                   max="${book.totalPages}"
+                                   value="${pagesRead}"
+                                   onchange="updateProgress(${index}, this.value)">
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${percent}%; background: ${book.color};"></div>
+                        </div>
+
+                        <div class="progress-text">
+                            <span>${pagesRead} / ${book.totalPages} pages</span>
+                            <span>${percent}%</span>
+                        </div>
+
+                        ${pagesRead >= book.totalPages ?
+                            '<div class="encouragement">✅ Book Complete! Well done! 🎉</div>' :
+                            `<div style="text-align: right; margin-top: 10px; color: #999; font-size: 0.9em;">
+                                ${book.totalPages - pagesRead} pages to go
+                            </div>`
+                        }
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateProgress(index, value) {
+            progress[index].pagesRead = parseInt(value) || 0;
+            saveProgress();
+            renderBooks();
+        }
+
+        // Calculate days until April 1st
+        function updateDaysLeft() {
+            const deadline = new Date('2026-04-01');
+            const today = new Date();
+            const daysLeft = Math.max(0, Math.ceil((deadline - today) / (1000 * 60 * 60 * 24)));
+            document.getElementById('daysLeft').textContent = daysLeft;
+        }
+
+        // Initialize
+        renderBooks();
+        updateStats();
+        updateDaysLeft();
+        setInterval(updateDaysLeft, 1000 * 60 * 60); // Update daily
+    </script>
+</body>
+</html>
