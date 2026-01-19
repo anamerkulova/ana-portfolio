@@ -330,7 +330,12 @@
                     <span class="stat-label">Books Done!</span>
                 </div>
             </div>
-            <p style="margin-top: 15px; font-size: 0.95em;">📅 Deadline: April 1st • Target: ~27 pages/day (but read at your own pace!)</p>
+            <p style="margin-top: 15px; font-size: 0.95em;">
+                📅 Today: <span id="currentDate"></span> • Deadline: April 1st
+            </p>
+            <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.9;">
+                Target: ~<span id="pagesPerDay">27</span> pages/day (but read at your own pace!)
+            </p>
         </div>
 
         <div class="overall-progress">
@@ -426,6 +431,7 @@
         function saveProgress() {
             localStorage.setItem('readingProgress', JSON.stringify(progress));
             updateStats();
+            updateDaysLeft();
         }
 
         function updateStats() {
@@ -522,12 +528,23 @@
             renderBooks();
         }
 
-        // Calculate days until April 1st
+        // Calculate days until April 1st and update date display
         function updateDaysLeft() {
             const deadline = new Date('2026-04-01');
             const today = new Date();
             const daysLeft = Math.max(0, Math.ceil((deadline - today) / (1000 * 60 * 60 * 24)));
             document.getElementById('daysLeft').textContent = daysLeft;
+
+            // Format current date
+            const options = { weekday: 'short', day: 'numeric', month: 'short' };
+            document.getElementById('currentDate').textContent = today.toLocaleDateString('en-GB', options);
+
+            // Calculate pages per day needed
+            const totalPagesRead = progress.reduce((sum, p) => sum + p.pagesRead, 0);
+            const totalPages = books.reduce((sum, b) => sum + b.totalPages, 0);
+            const pagesRemaining = totalPages - totalPagesRead;
+            const pagesPerDay = daysLeft > 0 ? Math.ceil(pagesRemaining / daysLeft) : 0;
+            document.getElementById('pagesPerDay').textContent = pagesPerDay;
         }
 
         // Initialize
