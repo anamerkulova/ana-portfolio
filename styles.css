@@ -62,6 +62,11 @@ h1 {
     z-index: 100;
 }
 
+.top-nav .btn {
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
 .more-projects-cta {
     text-align: center;
     margin-top: 2rem;
