@@ -162,6 +162,13 @@ h1 {
     color: #FF6B6B;
 }
 
+.project-link-placeholder {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #AAAAAA;
+    font-style: italic;
+}
+
 /* About Page */
 .about-content {
     text-align: left;
